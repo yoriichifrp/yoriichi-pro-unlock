@@ -64,7 +64,7 @@
   align-items: flex-end;
   justify-content: center;
   width: 100%;
-  transform: translateY(-28px);
+  transform: translateY(-38px);
 }
 
 .hero-portrait-img {
@@ -376,7 +376,7 @@
 
   .hero-portrait {
     max-width: 420px;
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
 
   .hero-portrait-img,
@@ -417,7 +417,7 @@
 
   .hero-portrait {
     max-width: 340px;
-    transform: translateY(-8px);
+    transform: translateY(-16px);
   }
 
   .hero-portrait-img,
