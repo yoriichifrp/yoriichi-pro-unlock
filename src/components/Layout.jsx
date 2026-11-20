@@ -58,35 +58,47 @@ export default function Layout() {
               <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                 {t('nav.home')}
               </NavLink>
-              <NavLink to="/catalogo" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                {t('nav.catalog')}
-              </NavLink>
               <div className="nav-drop">
-                <span className="nav-link">{t('nav.services')}</span>
+                <Link className="nav-link" to="/catalogo">{t('nav.services')}</Link>
                 <div className="nav-drop-panel">
                   {categories.map((category) => (
                     <Link className="nav-drop-item" to={`/servicios/${category.slug}`} key={category.slug}>
                       {lang === 'es' ? category.name_es : category.name_en}
                     </Link>
                   ))}
+                  <Link className="nav-drop-item" to="/estado">{t('nav.track')}</Link>
                   <Link className="nav-drop-item" to="/catalogo">{t('nav.allServices')}</Link>
                 </div>
               </div>
-              <NavLink to="/herramientas" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                {t('nav.tools')}
+              <NavLink to="/servicios/network" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                {t('nav.liberation')}
               </NavLink>
               <NavLink to="/creditos" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                 {t('nav.credits')}
               </NavLink>
-              <NavLink to="/estado-pedidos" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                {t('nav.track')}
+              <NavLink to="/herramientas" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                {t('nav.remote')}
+              </NavLink>
+              <NavLink to="/servicios/imei" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                {t('nav.imei')}
+              </NavLink>
+              <NavLink to="/registro" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                {t('nav.resellers')}
               </NavLink>
               <NavLink to="/contacto" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                {t('nav.contact')}
+                {t('nav.support')}
               </NavLink>
             </nav>
 
             <div className="header-actions">
+              <button type="button" className="globe-btn" aria-label={t('common.language')} onClick={() => setLang(lang === 'es' ? 'en' : 'es')}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                  <ellipse cx="12" cy="12" rx="4" ry="9" fill="none" stroke="currentColor" strokeWidth="1.3" />
+                  <path d="M3 12h18M4.6 7h14.8M4.6 17h14.8" fill="none" stroke="currentColor" strokeWidth="1.3" />
+                </svg>
+              </button>
+
               <div className="lang-switch" role="group" aria-label={t('common.language')}>
                 <button type="button" className={lang === 'es' ? 'active' : ''} onClick={() => setLang('es')}>
                   ES
@@ -96,18 +108,30 @@ export default function Layout() {
                 </button>
               </div>
 
+              <span className="header-divider" aria-hidden="true" />
+
               {user ? (
                 <>
-                  <Link className="btn btn-ghost btn-sm" to="/panel">{t('nav.panel')}</Link>
+                  <Link className="btn-header btn-header-ghost" to="/panel">{t('nav.panel')}</Link>
                   {user.role === 'admin' ? (
-                    <Link className="btn btn-blue btn-sm" to="/admin">{t('nav.admin')}</Link>
+                    <Link className="btn-header btn-header-gold" to="/admin">{t('nav.admin')}</Link>
                   ) : null}
-                  <button type="button" className="btn btn-ghost btn-sm" onClick={logout}>{t('nav.logout')}</button>
+                  <button type="button" className="btn-header btn-header-ghost" onClick={logout}>{t('nav.logout')}</button>
                 </>
               ) : (
                 <>
-                  <Link className="btn btn-ghost btn-sm" to="/ingresar">{t('nav.login')}</Link>
-                  <Link className="btn btn-primary btn-sm" to="/registro">{t('nav.register')}</Link>
+                  <Link className="btn-header btn-header-ghost" to="/ingresar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM5 20a7 7 0 0 1 14 0" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                    </svg>
+                    {t('nav.login')}
+                  </Link>
+                  <Link className="btn-header btn-header-gold" to="/registro">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M10 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM3 20a7 7 0 0 1 13.5-2.6M18 8v6M15 11h6" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {t('nav.register')}
+                  </Link>
                 </>
               )}
 
@@ -126,11 +150,14 @@ export default function Layout() {
           <div className={`mobile-drawer ${open ? 'open' : ''}`}>
             <div className="mobile-nav">
               <Link to="/" onClick={closeMenu}>{t('nav.home')}</Link>
-              <Link to="/catalogo" onClick={closeMenu}>{t('nav.catalog')}</Link>
-              <Link to="/herramientas" onClick={closeMenu}>{t('nav.tools')}</Link>
+              <Link to="/catalogo" onClick={closeMenu}>{t('nav.services')}</Link>
+              <Link to="/servicios/network" onClick={closeMenu}>{t('nav.liberation')}</Link>
               <Link to="/creditos" onClick={closeMenu}>{t('nav.credits')}</Link>
-              <Link to="/estado-pedidos" onClick={closeMenu}>{t('nav.track')}</Link>
-              <Link to="/contacto" onClick={closeMenu}>{t('nav.contact')}</Link>
+              <Link to="/herramientas" onClick={closeMenu}>{t('nav.remote')}</Link>
+              <Link to="/servicios/imei" onClick={closeMenu}>{t('nav.imei')}</Link>
+              <Link to="/registro" onClick={closeMenu}>{t('nav.resellers')}</Link>
+              <Link to="/estado" onClick={closeMenu}>{t('nav.track')}</Link>
+              <Link to="/contacto" onClick={closeMenu}>{t('nav.support')}</Link>
               {categories.map((category) => (
                 <Link className="sub" to={`/servicios/${category.slug}`} key={category.slug} onClick={closeMenu}>
                   {lang === 'es' ? category.name_es : category.name_en}
@@ -178,7 +205,7 @@ export default function Layout() {
                 <li><Link to="/catalogo">{t('nav.catalog')}</Link></li>
                 <li><Link to="/herramientas">{t('nav.tools')}</Link></li>
                 <li><Link to="/creditos">{t('nav.credits')}</Link></li>
-                <li><Link to="/estado-pedidos">{t('nav.track')}</Link></li>
+                <li><Link to="/estado">{t('nav.track')}</Link></li>
               </ul>
             </div>
             <div>
