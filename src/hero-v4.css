@@ -117,36 +117,89 @@
 
 .hero-title-ref {
   margin-bottom: 14px;
+  position: relative;
+}
+
+/* Detalle japonés: línea solar carmesí con filo dorado sobre la marca */
+.hero-title-ref::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -12px;
+  width: min(62%, 300px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 16, 46, 0),
+    rgba(200, 16, 46, 0.9) 16%,
+    rgba(232, 196, 106, 0.95) 48%,
+    rgba(255, 120, 60, 0.55) 74%,
+    rgba(255, 120, 60, 0)
+  );
+  box-shadow: 0 0 14px rgba(200, 16, 46, 0.45);
+  pointer-events: none;
+}
+
+/* Chispas de la hoja Nichirin: destellos dorados muy sutiles */
+.hero-title-ref::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: -22px;
+  width: 104px;
+  height: 104px;
+  background:
+    radial-gradient(circle at 20% 32%, rgba(249, 233, 190, 0.9) 0 1.5px, transparent 2.3px),
+    radial-gradient(circle at 66% 16%, rgba(255, 130, 70, 0.85) 0 1.3px, transparent 2.1px),
+    radial-gradient(circle at 48% 60%, rgba(232, 196, 106, 0.75) 0 1.1px, transparent 1.9px),
+    radial-gradient(circle at 82% 72%, rgba(255, 255, 255, 0.6) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 34% 84%, rgba(200, 16, 46, 0.5) 0 1.2px, transparent 2px);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .hero-title-ref .title-main {
   display: block;
-  font-size: min(20.4cqi, 8.6rem);
+  font-family: var(--font-display);
+  font-size: min(17.4cqi, 7.3rem);
   font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 0.86;
+  letter-spacing: 0.012em;
+  line-height: 0.92;
   white-space: nowrap;
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f4f8ff 16%,
-    #cfdcee 36%,
-    #8fa1b9 50%,
-    #ffffff 58%,
-    #dce7f6 72%,
-    #9aabc2 88%,
-    #eef5ff 100%
-  );
+  /* Plata pulida con reflejos carmesí y dorado del Sol */
+  background:
+    linear-gradient(
+      104deg,
+      rgba(200, 16, 46, 0.62) 0%,
+      rgba(200, 16, 46, 0) 24%,
+      rgba(255, 59, 47, 0.34) 40%,
+      rgba(232, 196, 106, 0.5) 62%,
+      rgba(200, 16, 46, 0) 78%,
+      rgba(255, 140, 70, 0.42) 100%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f6f9ff 14%,
+      #d2dfef 32%,
+      #8798b0 48%,
+      #ffffff 57%,
+      #e2ecf8 70%,
+      #96a7be 86%,
+      #f4f9ff 100%
+    );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.18);
   filter:
-    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35))
-    drop-shadow(0 6px 0 rgba(24, 40, 66, 0.6))
-    drop-shadow(0 12px 1px rgba(10, 18, 30, 0.55))
-    drop-shadow(0 24px 42px rgba(0, 0, 0, 0.8))
-    drop-shadow(0 0 34px rgba(56, 225, 255, 0.4));
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.45))
+    drop-shadow(0 5px 0 rgba(20, 28, 44, 0.7))
+    drop-shadow(0 11px 1px rgba(8, 12, 20, 0.55))
+    drop-shadow(0 22px 38px rgba(0, 0, 0, 0.82))
+    drop-shadow(0 0 26px rgba(200, 16, 46, 0.34))
+    drop-shadow(0 0 46px rgba(232, 196, 106, 0.2));
 }
 
 .hero-title-ref .title-sub {
@@ -155,17 +208,19 @@
 }
 
 .hero-title-ref .title-sub span {
+  font-family: var(--font-tech);
   font-size: min(7.2cqi, 2.7rem);
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  background: linear-gradient(180deg, #fff8e2 0%, #f4d795 26%, #c99c3e 52%, #ffeab8 72%, #a87f2c 100%);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  background: linear-gradient(180deg, #fff6dd 0%, #f8dd9d 24%, #cf9f42 52%, #ffe8b0 70%, #a97f2c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   filter:
-    drop-shadow(0 0 22px rgba(232, 196, 106, 0.45))
-    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
+    drop-shadow(0 0 16px rgba(255, 128, 64, 0.42))
+    drop-shadow(0 0 26px rgba(232, 196, 106, 0.38))
+    drop-shadow(0 5px 14px rgba(0, 0, 0, 0.75));
 }
 
 /* ---------- Derecha: smartphone conceptual ---------- */
