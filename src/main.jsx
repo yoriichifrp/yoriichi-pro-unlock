@@ -6,6 +6,7 @@ import { LanguageProvider } from './i18n';
 import { AuthProvider } from './auth';
 import './styles.css';
 import './reference-theme.css';
+import './hero-v4.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
