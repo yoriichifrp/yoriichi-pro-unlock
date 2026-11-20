@@ -45,7 +45,8 @@
   --shadow-cyan: 0 0 0 1px rgba(56, 225, 255, 0.16), 0 22px 58px -30px rgba(47, 123, 255, 0.6);
 
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Cinzel", "Times New Roman", Georgia, serif;
+  --font-tech: "Chakra Petch", "Inter", "Segoe UI", system-ui, sans-serif;
   --header-h: 78px;
 }
 

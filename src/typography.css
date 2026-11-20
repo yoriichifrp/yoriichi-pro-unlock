@@ -1,0 +1,141 @@
+/* =========================================================
+   YORIICHI PRO UNLOCK — Sistema tipográfico (identidad visual)
+   Cinzel   → títulos: guerrero legendario, inscripcional, imponente
+   Chakra Petch → parte técnica: botones, navegación, etiquetas
+   Inter    → lectura: párrafos, formularios y tablas de datos
+   Solo tipografía: no altera estructura, tamaños ni contenido.
+   ========================================================= */
+
+/* ---------- 1. Familias ---------- */
+:root {
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Cinzel", "Times New Roman", Georgia, serif;
+  --font-tech: "Chakra Petch", "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* ---------- 2. Títulos: presencia de marca ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.card-title,
+.panel-title,
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-synthesis: none;
+}
+
+h1,
+.hero-title,
+.page-title {
+  font-weight: 900;
+}
+
+/* Títulos pequeños no deben perder legibilidad en mayúsculas anchas */
+h5,
+h6 {
+  font-weight: 600;
+}
+
+/* ---------- 3. Voz técnica: navegación, botones, etiquetas ---------- */
+.nav-link,
+.nav-drop-item,
+.nav-drop-toggle,
+.btn,
+button,
+.eyebrow,
+.pill,
+.badge,
+.chip,
+.tag,
+.stat-label,
+.kicker,
+.label,
+label,
+th,
+legend {
+  font-family: var(--font-tech);
+}
+
+.btn,
+button,
+.nav-link,
+.nav-drop-item {
+  font-weight: 600;
+}
+
+.eyebrow,
+.stat-label,
+th,
+.label,
+label,
+legend {
+  font-weight: 600;
+}
+
+/* Cifras y códigos: alineación estable en tablas y paneles */
+th,
+td,
+.stat-value,
+.mono,
+code,
+pre {
+  font-variant-numeric: tabular-nums;
+}
+
+code,
+pre,
+.mono {
+  font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+}
+
+/* ---------- 4. Lectura: párrafos y formularios ---------- */
+p,
+li,
+dd,
+dt,
+blockquote,
+input,
+select,
+textarea,
+small,
+.lead,
+.muted {
+  font-family: var(--font-body);
+}
+
+input,
+select,
+textarea {
+  font-weight: 400;
+}
+
+/* ---------- 5. Detalles japoneses tradicionales ---------- */
+.jp,
+.serif-jp {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Songti SC", var(--font-display), serif;
+}
+
+/* ---------- 6. Legibilidad global ---------- */
+h1,
+h2,
+h3,
+h4,
+.hero-title,
+.section-title {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
