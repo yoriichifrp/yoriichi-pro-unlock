@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { YoriichiArt } from './YoriichiArt';
 
 /*
-  Slot de imagen real del personaje.
+  Retrato del personaje en el Hero.
 
-  Orden de resolución:
-  1) src/assets/yoriichi-original.{png,webp,jpg,jpeg} -> Vite la empaqueta y se usa
-     sin ninguna petición fallida (ruta recomendada si quieres optimización).
-  2) public/images/yoriichi-original.png -> ruta pública indicada en el brief.
-  3) public/images/yoriichi-original.webp
-  4) Si no existe ninguna, se mantiene la ilustración vectorial actual como respaldo
-     para que la portada nunca quede vacía ni rota.
+  Prioridad de resolución (sin peticiones fallidas):
+  1) src/assets/yoriichi-original.(png|webp|jpg|jpeg|avif)
+     -> Vite la empaqueta con hash. Es la opción recomendada.
+  2) public/images/yoriichi-original.(png|webp|jpg|jpeg)
+     -> la ruta que indica el brief; vite.config.js la detecta al compilar.
+  3) Si no hay ninguna imagen, se mantiene la ilustración vectorial existente para
+     que la portada nunca quede vacía ni con un hueco roto.
 */
 const bundled = import.meta.glob('../assets/yoriichi-original.{png,webp,jpg,jpeg,avif}', {
   eager: true,
@@ -20,17 +20,14 @@ const bundled = import.meta.glob('../assets/yoriichi-original.{png,webp,jpg,jpeg
 
 const bundledUrl = Object.values(bundled)[0];
 
-const SOURCES = [
-  bundledUrl,
-  '/images/yoriichi-original.png',
-  '/images/yoriichi-original.webp',
-].filter(Boolean);
+const publicUrl = typeof __HERO_IMAGE__ !== 'undefined' ? __HERO_IMAGE__ : null;
+
+const SRC = bundledUrl || publicUrl || null;
 
 export function HeroPortrait() {
-  const [index, setIndex] = useState(0);
-  const src = SOURCES[index];
+  const [broken, setBroken] = useState(false);
 
-  if (!src) {
+  if (!SRC || broken) {
     return (
       <div className="hero-portrait hero-portrait-fallback" data-portrait-source="vector">
         <YoriichiArt />
@@ -42,10 +39,12 @@ export function HeroPortrait() {
     <div className="hero-portrait" data-portrait-source="image">
       <img
         className="hero-portrait-img"
-        src={src}
-        alt="Yoriichi Tsugikuni, cazador de demonios, con su haori carmesí, sus pendientes hanafuda y su katana Nichirin"
+        src={SRC}
+        alt="Yoriichi Tsugikuni con su haori carmesí, sus pendientes hanafuda y su katana Nichirin"
+        width="760"
+        height="1100"
         decoding="async"
-        onError={() => setIndex((current) => current + 1)}
+        onError={() => setBroken(true)}
       />
     </div>
   );
