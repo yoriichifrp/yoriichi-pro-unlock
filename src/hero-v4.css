@@ -1,0 +1,430 @@
+/* ===================================================================
+   PORTADA 4.0 — Yoriichi original (izq.) · marca (centro) · smartphone (der.)
+   Reemplaza visualmente al bloque PORTADA 3.0.
+   =================================================================== */
+
+/* Contenedor algo más ancho solo en la portada, para dar aire a la marca */
+.hero-ref .container {
+  max-width: 1440px;
+  width: 100%;
+}
+
+/* Fondo: negro profundo, carmesí detrás del personaje, azul tras el dispositivo */
+.hero-ref {
+  position: relative;
+  isolation: isolate;
+  background-color: #03050b;
+  background-image:
+    radial-gradient(760px 640px at 14% 62%, rgba(176, 12, 38, 0.42), transparent 62%),
+    radial-gradient(660px 560px at 86% 34%, rgba(36, 104, 255, 0.3), transparent 64%),
+    radial-gradient(520px 340px at 52% 104%, rgba(232, 196, 106, 0.1), transparent 76%),
+    linear-gradient(180deg, #05070e 0%, #03040a 56%, #04060d 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Viñeta: el personaje domina sin competir con el texto */
+.hero-ref::after {
+  background:
+    radial-gradient(580px 540px at 17% 56%, rgba(3, 5, 11, 0.6), transparent 74%),
+    linear-gradient(180deg, rgba(3, 5, 11, 0.5), transparent 24%);
+}
+
+.hero-stage-ref {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.02fr) minmax(0, 0.56fr);
+  grid-template-areas: "art copy device";
+  align-items: center;
+  column-gap: clamp(6px, 1.1vw, 20px);
+  min-height: clamp(500px, 70vh, 720px);
+}
+
+/* ---------- Izquierda: personaje ---------- */
+.hero-art {
+  grid-area: art;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.hero-art::before {
+  inset: -8% -16% -4%;
+  background: radial-gradient(closest-side, rgba(190, 14, 40, 0.42), rgba(110, 8, 24, 0.18) 58%, transparent 80%);
+}
+
+.hero-ref .hero-art {
+  opacity: 1;
+}
+
+.hero-portrait {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(72vh, 680px);
+  object-fit: contain;
+  object-position: bottom center;
+  filter:
+    drop-shadow(0 28px 58px rgba(0, 0, 0, 0.82))
+    drop-shadow(0 0 42px rgba(190, 14, 40, 0.3));
+}
+
+.hero-portrait .yoriichi-art {
+  width: 100%;
+  max-width: none;
+  max-height: min(72vh, 680px);
+  height: auto;
+  margin: 0;
+  filter:
+    drop-shadow(0 28px 58px rgba(0, 0, 0, 0.82))
+    drop-shadow(0 0 42px rgba(190, 14, 40, 0.3));
+}
+
+/* Fuego más discreto: elegante, no una pared de llamas */
+.hero-portrait .yo-flame {
+  filter: opacity(0.5);
+}
+
+/* ---------- Centro: marca dominante ---------- */
+.hero-copy-ref {
+  grid-area: copy;
+  container-type: inline-size;
+  position: relative;
+  z-index: 3;
+  justify-self: center;
+  width: 100%;
+}
+
+.hero-title-ref {
+  margin-bottom: 14px;
+}
+
+.hero-title-ref .title-main {
+  display: block;
+  font-size: min(20.4cqi, 8.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.86;
+  white-space: nowrap;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f4f8ff 16%,
+    #cfdcee 36%,
+    #8fa1b9 50%,
+    #ffffff 58%,
+    #dce7f6 72%,
+    #9aabc2 88%,
+    #eef5ff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35))
+    drop-shadow(0 6px 0 rgba(24, 40, 66, 0.6))
+    drop-shadow(0 12px 1px rgba(10, 18, 30, 0.55))
+    drop-shadow(0 24px 42px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 34px rgba(56, 225, 255, 0.4));
+}
+
+.hero-title-ref .title-sub {
+  margin-top: 12px;
+  gap: 14px;
+}
+
+.hero-title-ref .title-sub span {
+  font-size: min(7.2cqi, 2.7rem);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  background: linear-gradient(180deg, #fff8e2 0%, #f4d795 26%, #c99c3e 52%, #ffeab8 72%, #a87f2c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter:
+    drop-shadow(0 0 22px rgba(232, 196, 106, 0.45))
+    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
+}
+
+/* ---------- Derecha: smartphone conceptual ---------- */
+.hero-device {
+  grid-area: device;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.device-stage {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.device-glow {
+  position: absolute;
+  inset: -14% -22% -8%;
+  z-index: 0;
+  background: radial-gradient(closest-side, rgba(56, 225, 255, 0.3), rgba(38, 108, 255, 0.13) 56%, transparent 78%);
+  filter: blur(14px);
+  animation: deviceGlow 9s ease-in-out infinite;
+}
+
+.device-float {
+  position: relative;
+  z-index: 1;
+  animation: deviceFloat 12s ease-in-out infinite;
+}
+
+.device-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: perspective(1500px) rotateY(-9deg) rotateX(1.4deg);
+  filter:
+    drop-shadow(0 30px 58px rgba(0, 0, 0, 0.78))
+    drop-shadow(0 0 34px rgba(56, 225, 255, 0.24));
+}
+
+.device-svg text {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.device-svg .dev-micro {
+  fill: #7fa8c4;
+  font-size: 6.6px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.device-svg .dev-title {
+  fill: #ffffff;
+  font-size: 12.6px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.device-svg .dev-label {
+  fill: #7fe4ff;
+  font-size: 6.4px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.device-svg .dev-row-label {
+  fill: #eaf6ff;
+  font-size: 9.4px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.device-svg .dev-row-value {
+  fill: #8fb6cf;
+  font-size: 7.6px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.device-svg .dev-scan-value {
+  fill: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.device-svg .dev-scan-caption {
+  fill: #7fe4ff;
+  font-size: 5.6px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.device-svg .dev-chip {
+  fill: #9fe8ff;
+  font-size: 6.2px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.device-svg .dev-chip.is-gold {
+  fill: #f0d69a;
+}
+
+.device-svg .dev-pulse {
+  animation: devPulse 3.2s ease-in-out infinite;
+}
+
+.device-svg .dev-ring-a {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: devSpin 26s linear infinite;
+}
+
+.device-svg .dev-ring-b {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: devSpin 15s linear infinite reverse;
+}
+
+.device-svg .dev-sweep {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: devSpin 4.6s linear infinite;
+}
+
+.device-svg .dev-scanline {
+  animation: devScan 5.4s ease-in-out infinite;
+}
+
+@keyframes deviceFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes deviceGlow {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes devSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes devScan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  14% {
+    opacity: 0.8;
+  }
+
+  86% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(470px);
+    opacity: 0;
+  }
+}
+
+@keyframes devPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---------- Adaptación ---------- */
+@media (max-width: 1180px) {
+  .hero-stage-ref {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "art"
+      "device";
+    row-gap: 14px;
+    min-height: 0;
+  }
+
+  .hero-art {
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .hero-portrait {
+    max-width: 420px;
+  }
+
+  .hero-portrait-img,
+  .hero-portrait .yoriichi-art {
+    max-height: 520px;
+  }
+
+  .hero-title-ref .title-main {
+    font-size: clamp(2.9rem, 11vw, 5.2rem);
+  }
+
+  .hero-title-ref .title-sub span {
+    font-size: clamp(1rem, 3.6vw, 1.8rem);
+  }
+
+  .device-stage {
+    max-width: 320px;
+  }
+
+  .device-svg {
+    transform: perspective(1500px) rotateY(-6deg) rotateX(1deg);
+  }
+
+  .hero-ref::after {
+    background: radial-gradient(520px 520px at 50% 46%, rgba(3, 5, 11, 0.5), transparent 78%);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-title-ref .title-main {
+    font-size: clamp(2.15rem, 13vw, 3.4rem);
+  }
+
+  .hero-title-ref .title-sub span {
+    font-size: clamp(0.95rem, 4.6vw, 1.45rem);
+    letter-spacing: 0.16em;
+  }
+
+  .hero-portrait {
+    max-width: 340px;
+  }
+
+  .hero-portrait-img,
+  .hero-portrait .yoriichi-art {
+    max-height: 430px;
+  }
+
+  .device-stage {
+    max-width: 248px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .device-float,
+  .device-glow,
+  .device-svg .dev-pulse,
+  .device-svg .dev-ring-a,
+  .device-svg .dev-ring-b,
+  .device-svg .dev-sweep,
+  .device-svg .dev-scanline {
+    animation: none;
+  }
+}
