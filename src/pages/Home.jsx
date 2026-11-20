@@ -16,24 +16,26 @@ const ACCENTS = {
 
 function Crest() {
   return (
-    <svg className="hero-crest" viewBox="0 0 64 44" aria-hidden="true">
+    <svg className="hero-crest" viewBox="0 0 64 40" aria-hidden="true">
       <defs>
         <linearGradient id="crest-gold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f9e9be" />
-          <stop offset="55%" stopColor="#e8c46a" />
-          <stop offset="100%" stopColor="#b8913c" />
+          <stop offset="0%" stopColor="#fdf3d4" />
+          <stop offset="45%" stopColor="#e8c46a" />
+          <stop offset="100%" stopColor="#a87f2c" />
         </linearGradient>
       </defs>
       <path
-        d="M32 3 L37 13 L48 9 L45 20 L58 22 L47 30 L50 40 L37 36 L32 43 L27 36 L14 40 L17 30 L6 22 L19 20 L16 9 L27 13 Z"
+        d="M7 31 L11 11 L23 21 L32 7 L41 21 L53 11 L57 31 Z"
         fill="url(#crest-gold)"
-        fillOpacity="0.16"
+        fillOpacity="0.2"
         stroke="url(#crest-gold)"
-        strokeWidth="1.2"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
       />
-      <path d="M32 12 L32 34" stroke="url(#crest-gold)" strokeWidth="1.6" />
-      <path d="M22 18 L32 24 L42 18" fill="none" stroke="url(#crest-gold)" strokeWidth="1.4" />
-      <circle cx="32" cy="30" r="2.6" fill="#ff3b2f" />
+      <path d="M7 31 H57" stroke="url(#crest-gold)" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="32" cy="16" r="2.4" fill="#ff3b2f" />
+      <circle cx="18" cy="17" r="1.6" fill="#38e1ff" />
+      <circle cx="46" cy="17" r="1.6" fill="#38e1ff" />
     </svg>
   );
 }
@@ -96,13 +98,18 @@ export default function Home() {
                 <span>{t('home.hero.tagline1')}</span>{' '}
                 <b>{t('home.hero.tagline2')}</b>{' '}
                 <em>{t('home.hero.tagline3')}</em>{' '}
-                <span>{t('home.hero.tagline4')}</span>
+                <span className="tag-gold">{t('home.hero.tagline4')}</span>
               </p>
 
               <p className="hero-lead">{t('home.hero.lead')}</p>
 
               <div className="hero-actions hero-actions-ref">
-                <Link className="btn-ref btn-ref-gold" to="/catalogo">
+                <Link className="btn-ref btn-ref-cyan" to="/catalogo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.5 4.5c3 0 6 1 6 1s1 3 1 6c0 5-5.5 9-9.5 9L8 17l-1.5-3C2.5 14 6.5 4.5 13.5 4.5Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+                    <circle cx="14.5" cy="9.5" r="1.6" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M6.5 17.5 4 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                  </svg>
                   {t('home.hero.ctaServices')}
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

@@ -27,7 +27,7 @@
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 14px;
   min-height: 82px;
 }
 
@@ -88,10 +88,10 @@
 
 .nav-link {
   position: relative;
-  padding: 10px 11px;
-  font-size: 0.7rem;
+  padding: 10px 9px;
+  font-size: 0.67rem;
   font-weight: 600;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #a9b6c9;
   white-space: nowrap;
@@ -104,8 +104,8 @@
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 11px;
-  right: 11px;
+  left: 9px;
+  right: 9px;
   bottom: 2px;
   height: 2px;
   border-radius: 2px;
@@ -129,7 +129,12 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.brand {
+  flex-shrink: 0;
 }
 
 .header-divider {
@@ -380,6 +385,11 @@
 }
 
 .hero-tagline-ref b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero-tagline-ref .tag-gold {
   color: #f0d18b;
   font-weight: 700;
 }
@@ -433,6 +443,18 @@
 .btn-ref-gold:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 38px rgba(232, 196, 106, 0.36);
+}
+
+/* Botón principal de la referencia: fondo cian, texto blanco. */
+.btn-ref-cyan {
+  color: #f2fbff;
+  background: linear-gradient(135deg, #29d3ff, #1a9cff 55%, #1668d8);
+  box-shadow: 0 12px 30px rgba(41, 211, 255, 0.3), inset 0 0 0 1px rgba(190, 240, 255, 0.35);
+}
+
+.btn-ref-cyan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(41, 211, 255, 0.42), inset 0 0 0 1px rgba(190, 240, 255, 0.5);
 }
 
 .btn-ref-outline {
