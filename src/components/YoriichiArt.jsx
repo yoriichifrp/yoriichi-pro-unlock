@@ -194,6 +194,15 @@ export function YoriichiArt({ className = '' }) {
       <path d="M284 200 C290 240 288 276 280 302 C289 268 289 232 281 198 Z" fill={`url(#${g('hair')})`} />
       <path d="M196 168 C204 158 214 154 224 154" stroke="#3a3c50" strokeOpacity="0.55" strokeWidth="1.4" fill="none" strokeLinecap="round" />
       <path d="M268 166 C260 158 250 154 240 154" stroke="#3a3c50" strokeOpacity="0.45" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+      <g fill={`url(#${g('hair')})`}>
+        <path d="M194 178 C202 190 206 200 205 210 C199 198 193 188 190 180 Z" />
+        <path d="M256 174 C262 186 264 198 262 208 C258 196 252 184 248 176 Z" />
+        <path d="M226 158 C232 168 235 178 234 188 C229 178 225 168 222 160 Z" />
+      </g>
+      <g stroke="#4a4d63" strokeOpacity="0.45" strokeWidth="1.2" fill="none" strokeLinecap="round">
+        <path d="M199 170 C204 184 205 196 204 206" />
+        <path d="M259 168 C255 182 253 194 254 204" />
+      </g>
 
       {/* ---------- Marca de fuego en la frente ---------- */}
       <g filter={`url(#${g('glow')})`} opacity="0.9">
@@ -208,33 +217,40 @@ export function YoriichiArt({ className = '' }) {
       />
 
       {/* ---------- Cejas serias ---------- */}
-      <path d="M188 210 C200 203 214 204 222 210" stroke="#2a1620" strokeWidth="4" strokeLinecap="round" fill="none" />
-      <path d="M242 210 C250 204 264 203 276 210" stroke="#2a1620" strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M190 214 C200 207 214 206 222 210" stroke="#2a1620" strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M274 214 C264 207 250 206 242 210" stroke="#2a1620" strokeWidth="4" strokeLinecap="round" fill="none" />
 
       {/* ---------- Ojos rojizos ---------- */}
       <g>
-        <path d="M190 236 C196 222 212 219 221 229 C213 240 199 243 190 236 Z" fill="#fdf3ea" />
-        <ellipse cx="207" cy="230" rx="6.4" ry="7.6" fill={`url(#${g('eye')})`} />
-        <ellipse cx="207" cy="230" rx="2.6" ry="4" fill="#1a0206" />
-        <circle cx="204.6" cy="226.4" r="1.7" fill="#ffffff" fillOpacity="0.92" />
-        <circle cx="209.4" cy="233" r="1" fill="#ffd27a" fillOpacity="0.85" />
-        <path d="M190 235 C198 220 214 218 222 229" stroke="#1a1216" strokeWidth="2.6" strokeLinecap="round" fill="none" />
-        <path d="M190 235 L184 238" stroke="#1a1216" strokeWidth="2" strokeLinecap="round" />
+        <path d="M188 234 C193 220 210 216 222 227 C213 239 198 242 188 234 Z" fill="#fdf4ec" />
+        <path d="M188 234 C196 236 212 234 222 227 C213 239 198 242 188 234 Z" fill="#d9a894" fillOpacity="0.32" />
+        <ellipse cx="206" cy="228.5" rx="7" ry="8.2" fill={`url(#${g('eye')})`} />
+        <ellipse cx="206" cy="228.5" rx="7" ry="8.2" fill="none" stroke="#5c0a14" strokeOpacity="0.5" strokeWidth="0.9" />
+        <ellipse cx="206" cy="229" rx="3" ry="4.6" fill="#160207" />
+        <circle cx="203.2" cy="224.6" r="1.9" fill="#ffffff" fillOpacity="0.95" />
+        <circle cx="208.8" cy="232" r="1" fill="#ffd27a" fillOpacity="0.9" />
+        <path d="M188 234 C194 219 211 215.5 222 227" stroke="#171015" strokeWidth="3" strokeLinecap="round" fill="none" />
+        <path d="M222 227 L228 225" stroke="#171015" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M190 237 C198 240 210 239 219 233" stroke="#b98271" strokeOpacity="0.5" strokeWidth="1.2" fill="none" />
       </g>
       <g>
-        <path d="M243 236 C251 222 267 219 274 229 C267 240 253 243 243 236 Z" fill="#fdf3ea" />
-        <ellipse cx="257" cy="230" rx="6.4" ry="7.6" fill={`url(#${g('eye')})`} />
-        <ellipse cx="257" cy="230" rx="2.6" ry="4" fill="#1a0206" />
-        <circle cx="254.6" cy="226.4" r="1.7" fill="#ffffff" fillOpacity="0.92" />
-        <circle cx="259.4" cy="233" r="1" fill="#ffd27a" fillOpacity="0.85" />
-        <path d="M242 235 C250 220 266 218 274 229" stroke="#1a1216" strokeWidth="2.6" strokeLinecap="round" fill="none" />
-        <path d="M274 235 L280 238" stroke="#1a1216" strokeWidth="2" strokeLinecap="round" />
+        <path d="M276 234 C271 220 254 216 242 227 C251 239 266 242 276 234 Z" fill="#fdf4ec" />
+        <path d="M276 234 C268 236 252 234 242 227 C251 239 266 242 276 234 Z" fill="#d9a894" fillOpacity="0.32" />
+        <ellipse cx="258" cy="228.5" rx="7" ry="8.2" fill={`url(#${g('eye')})`} />
+        <ellipse cx="258" cy="228.5" rx="7" ry="8.2" fill="none" stroke="#5c0a14" strokeOpacity="0.5" strokeWidth="0.9" />
+        <ellipse cx="258" cy="229" rx="3" ry="4.6" fill="#160207" />
+        <circle cx="260.8" cy="224.6" r="1.9" fill="#ffffff" fillOpacity="0.95" />
+        <circle cx="255.2" cy="232" r="1" fill="#ffd27a" fillOpacity="0.9" />
+        <path d="M276 234 C270 219 253 215.5 242 227" stroke="#171015" strokeWidth="3" strokeLinecap="round" fill="none" />
+        <path d="M242 227 L236 225" stroke="#171015" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M274 237 C266 240 254 239 245 233" stroke="#b98271" strokeOpacity="0.5" strokeWidth="1.2" fill="none" />
       </g>
 
       {/* ---------- Nariz y boca ---------- */}
       <path d="M236 248 C231 258 230 264 235 266" stroke="#b98271" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.75" />
-      <path d="M218 280 C226 284 238 284 246 279" stroke="#7d3b42" strokeWidth="2.2" strokeLinecap="round" fill="none" />
-      <path d="M221 286 C228 289 236 289 243 286" stroke="#c88f7b" strokeOpacity="0.45" strokeWidth="1.4" strokeLinecap="round" fill="none" />
+      <path d="M217 279 C225 283.5 238 283 246 278" stroke="#7a3a41" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+      <path d="M221 286 C228 288.5 236 288.5 243 285.5" stroke="#c88f7b" strokeOpacity="0.4" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+      <path d="M214 275 C218 277 222 278 226 278" stroke="#a8605f" strokeOpacity="0.45" strokeWidth="1.4" strokeLinecap="round" fill="none" />
 
       {/* ---------- Pendientes hanafuda ---------- */}
       <g>
@@ -306,11 +322,18 @@ export function YoriichiArt({ className = '' }) {
       </g>
       <path d="M322 536 L318 546" stroke={`url(#${g('gold')})`} strokeWidth="5" strokeLinecap="round" />
 
-      {/* Mano sobre la empuñadura */}
-      <ellipse cx="338" cy="504" rx="15" ry="17" transform="rotate(-20 338 504)" fill={`url(#${g('skin')})`} stroke="#a86b5f" strokeOpacity="0.6" strokeWidth="1" />
-      <g stroke="#b98271" strokeOpacity="0.5" strokeWidth="1.4">
-        <path d="M330 494 L348 498M328 504 L346 508M330 514 L347 517" />
+      {/* Mano con dedos sobre la empuñadura */}
+      <ellipse cx="336" cy="508" rx="16" ry="20" transform="rotate(-22 336 508)" fill={`url(#${g('skin')})`} stroke="#a86b5f" strokeOpacity="0.45" strokeWidth="1" />
+      <g stroke={`url(#${g('skin')})`} strokeWidth="8.5" strokeLinecap="round" fill="none">
+        <path d="M328 491 L347 496" />
+        <path d="M325 501 L344 506" />
+        <path d="M322 511 L341 516" />
+        <path d="M320 521 L338 526" />
       </g>
+      <g stroke="#a86b5f" strokeOpacity="0.5" strokeWidth="1.1" fill="none" strokeLinecap="round">
+        <path d="M328 491 L347 496M325 501 L344 506M322 511 L341 516M320 521 L338 526" />
+      </g>
+      <path d="M331 484 C341 486 347 493 349 500 C343 502 335 496 330 490 Z" fill={`url(#${g('skin')})`} stroke="#a86b5f" strokeOpacity="0.5" strokeWidth="1" />
 
       {/* ---------- Energía de la katana ---------- */}
       <g filter={`url(#${g('fire')})`} opacity="0.75">

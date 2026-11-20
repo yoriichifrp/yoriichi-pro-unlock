@@ -872,6 +872,8 @@ body {
   filter:
     drop-shadow(0 26px 46px rgba(0, 0, 0, 0.72))
     drop-shadow(0 0 34px rgba(200, 16, 46, 0.28));
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0, 0, 0, 0.45) 96%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0, 0, 0, 0.45) 96%, transparent 100%);
   animation: yoriichiFloat 9s ease-in-out infinite;
 }
 
@@ -1005,6 +1007,7 @@ body {
   .hero-art {
     align-self: center;
     margin-top: 4px;
+    margin-bottom: -18px;
   }
 
   .hero-art .yoriichi-art {
@@ -1025,6 +1028,7 @@ body {
 
   .hero-device {
     max-width: 200px;
+    margin-top: -6px;
   }
 
   .hero-ref::after {
