@@ -41,8 +41,8 @@ export function HeroPortrait() {
         className="hero-portrait-img"
         src={SRC}
         alt="Yoriichi Tsugikuni con su haori carmesí, sus pendientes hanafuda y su katana Nichirin"
-        width="760"
-        height="1100"
+        width="880"
+        height="702"
         decoding="async"
         onError={() => setBroken(true)}
       />

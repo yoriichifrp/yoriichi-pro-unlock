@@ -69,10 +69,12 @@
 .hero-portrait-img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: min(72vh, 680px);
-  object-fit: contain;
-  object-position: bottom center;
+  height: clamp(360px, 62vh, 640px);
+  max-height: min(78vh, 700px);
+  object-fit: cover;
+  object-position: 54% 22%;
+  -webkit-mask-image: radial-gradient(112% 94% at 52% 40%, #000 42%, rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0.35) 78%, transparent 92%);
+  mask-image: radial-gradient(112% 94% at 52% 40%, #000 42%, rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0.35) 78%, transparent 92%);
   filter:
     drop-shadow(0 28px 58px rgba(0, 0, 0, 0.82))
     drop-shadow(0 0 42px rgba(190, 14, 40, 0.3));
