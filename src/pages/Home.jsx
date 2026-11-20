@@ -14,6 +14,30 @@ const ACCENTS = {
   blue: '#3b8cff',
 };
 
+function Crest() {
+  return (
+    <svg className="hero-crest" viewBox="0 0 64 44" aria-hidden="true">
+      <defs>
+        <linearGradient id="crest-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f9e9be" />
+          <stop offset="55%" stopColor="#e8c46a" />
+          <stop offset="100%" stopColor="#b8913c" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M32 3 L37 13 L48 9 L45 20 L58 22 L47 30 L50 40 L37 36 L32 43 L27 36 L14 40 L17 30 L6 22 L19 20 L16 9 L27 13 Z"
+        fill="url(#crest-gold)"
+        fillOpacity="0.16"
+        stroke="url(#crest-gold)"
+        strokeWidth="1.2"
+      />
+      <path d="M32 12 L32 34" stroke="url(#crest-gold)" strokeWidth="1.6" />
+      <path d="M22 18 L32 24 L42 18" fill="none" stroke="url(#crest-gold)" strokeWidth="1.4" />
+      <circle cx="32" cy="30" r="2.6" fill="#ff3b2f" />
+    </svg>
+  );
+}
+
 export default function Home() {
   const { t, lang } = useI18n();
   const { user } = useAuth();
@@ -37,29 +61,68 @@ export default function Home() {
 
   const pick = (item, field) => (lang === 'es' ? item[`${field}_es`] : item[`${field}_en`]) || '';
   const serviceCount = categories.reduce((total, category) => total + (category.services?.length || 0), 0);
+  const activePayments = methods.filter((method) => method.status === 'active').length;
 
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-ref">
+        <div className="hero-backdrop" aria-hidden="true">
+          <span className="hero-grid-lines" />
+          <span className="hero-horizon" />
+          <span className="hero-spark hero-spark-a" />
+          <span className="hero-spark hero-spark-b" />
+        </div>
+
         <div className="container">
-          <div className="hero-stage">
+          <div className="hero-stage hero-stage-ref">
             <Reveal className="hero-art" delay={40}>
               <SamuraiArt />
             </Reveal>
 
-            <Reveal className="hero-copy" delay={90}>
-              <span className="hero-badge">{t('home.hero.eyebrow')}</span>
-              <h1 className="hero-title-xl">
-                YORIICHI <span className="fire-text">PRO UNLOCK</span>
+            <Reveal className="hero-copy hero-copy-ref" delay={90}>
+              <Crest />
+              <span className="hero-kicker">{t('home.hero.eyebrowTop')}</span>
+
+              <h1 className="hero-title-ref">
+                <span className="title-main">{t('brand.name')}</span>
+                <span className="title-sub">
+                  <i aria-hidden="true" />
+                  <span>{t('brand.suffix')}</span>
+                  <i aria-hidden="true" />
+                </span>
               </h1>
-              <p className="hero-tagline">{t('home.hero.tagline')}</p>
-              <div className="hero-actions">
-                <Link className="btn btn-primary" to="/catalogo">{t('home.hero.ctaServices')}</Link>
-                <Link className="btn btn-ghost" to={user ? '/panel' : '/registro'}>
+
+              <p className="hero-tagline-ref">
+                <span>{t('home.hero.tagline1')}</span>{' '}
+                <b>{t('home.hero.tagline2')}</b>{' '}
+                <em>{t('home.hero.tagline3')}</em>{' '}
+                <span>{t('home.hero.tagline4')}</span>
+              </p>
+
+              <p className="hero-lead">{t('home.hero.lead')}</p>
+
+              <div className="hero-actions hero-actions-ref">
+                <Link className="btn-ref btn-ref-gold" to="/catalogo">
+                  {t('home.hero.ctaServices')}
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+                <Link className="btn-ref btn-ref-outline" to={user ? '/panel' : '/registro'}>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.5 20a7.5 7.5 0 0 1 15 0M18 8v6M15 11h6" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   {user ? t('nav.panel') : t('home.hero.ctaRegister')}
                 </Link>
               </div>
-              <p className="hero-note">{t('home.hero.note')}</p>
+
+              <p className="hero-note-ref">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3Z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                  <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {t('home.hero.note')}
+              </p>
             </Reveal>
 
             <Reveal className="hero-device" delay={150}>
@@ -67,30 +130,32 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <Reveal className="status-strip" delay={200}>
+          <Reveal className="status-strip status-strip-ref" delay={200}>
             <div className="status-tile is-ready">
-              <span className="dot-state" aria-hidden="true" />
-              <div>
-                <strong>{t('home.status.catalog')}</strong>
-                <span>{t('home.status.catalogState')}</span>
-                <em>{serviceCount} {t('home.status.services')}</em>
+              <div className="status-tile-head">
+                <span className="status-tile-label">{t('home.status.platformLabel')}</span>
+                <span className="dot-state" aria-hidden="true" />
               </div>
+              <strong>{t('home.status.operational')}</strong>
+              <span className="status-tile-foot">{serviceCount} {t('home.status.services')}</span>
             </div>
+
             <div className="status-tile is-pending">
-              <span className="dot-state" aria-hidden="true" />
-              <div>
-                <strong>{t('home.status.payments')}</strong>
-                <span>{t('common.configPending')}</span>
-                <em>{methods.length} {t('home.status.methods')}</em>
+              <div className="status-tile-head">
+                <span className="status-tile-label">{t('home.status.payments')}</span>
+                <span className="dot-state" aria-hidden="true" />
               </div>
+              <strong>{activePayments > 0 ? t('common.available') : t('home.status.connectionPending')}</strong>
+              <span className="status-tile-foot">{methods.length} {t('home.status.methods')}</span>
             </div>
+
             <div className="status-tile is-idle">
-              <span className="dot-state" aria-hidden="true" />
-              <div>
-                <strong>{t('home.status.connections')}</strong>
-                <span>{t('common.preparing')}</span>
-                <em>{t('home.status.connectionsNote')}</em>
+              <div className="status-tile-head">
+                <span className="status-tile-label">{t('home.status.modeLabel')}</span>
+                <span className="dot-state" aria-hidden="true" />
               </div>
+              <strong>{t('home.status.imeiCheck')}</strong>
+              <span className="status-tile-foot">{t('home.status.connectionPending')}</span>
             </div>
           </Reveal>
         </div>
