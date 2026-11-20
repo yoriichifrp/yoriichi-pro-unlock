@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useI18n } from '../i18n';
 import { useAuth } from '../auth';
 
@@ -16,6 +16,8 @@ export function LoginPage() {
   const { t } = useI18n();
   const { user, login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const panelPath = location.pathname === '/login' ? '/dashboard' : '/panel';
   const describeError = useFormError();
   const [form, setForm] = useState({ email: '', password: '' });
   const [busy, setBusy] = useState(false);
@@ -34,7 +36,7 @@ export function LoginPage() {
     setBusy(true);
     try {
       await login(form.email.trim(), form.password);
-      navigate('/panel');
+      navigate(panelPath);
     } catch (thrown) {
       setError(describeError(thrown));
     } finally {
@@ -56,6 +58,7 @@ export function LoginPage() {
                 <label htmlFor="login-email">{t('common.email')}</label>
                 <input
                   id="login-email"
+                  name="email"
                   type="email"
                   value={form.email}
                   onChange={change('email')}
@@ -67,6 +70,7 @@ export function LoginPage() {
                 <label htmlFor="login-password">{t('common.password')}</label>
                 <input
                   id="login-password"
+                  name="password"
                   type="password"
                   value={form.password}
                   onChange={change('password')}
@@ -96,6 +100,8 @@ export function RegisterPage() {
   const { t } = useI18n();
   const { user, register } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const panelPath = location.pathname === '/register' ? '/dashboard' : '/panel';
   const describeError = useFormError();
   const [form, setForm] = useState({ name: '', email: '', password: '', country: '' });
   const [busy, setBusy] = useState(false);
@@ -119,7 +125,7 @@ export function RegisterPage() {
         password: form.password,
         country: form.country.trim(),
       });
-      navigate('/panel');
+      navigate(panelPath);
     } catch (thrown) {
       setError(describeError(thrown));
     } finally {
@@ -139,12 +145,13 @@ export function RegisterPage() {
             <form onSubmit={submit} className="mt-3">
               <div className="field">
                 <label htmlFor="register-name">{t('common.name')}</label>
-                <input id="register-name" value={form.name} onChange={change('name')} maxLength={60} required />
+                <input id="register-name" name="name" value={form.name} onChange={change('name')} maxLength={60} required />
               </div>
               <div className="field">
                 <label htmlFor="register-email">{t('common.email')}</label>
                 <input
                   id="register-email"
+                  name="email"
                   type="email"
                   value={form.email}
                   onChange={change('email')}
@@ -154,12 +161,13 @@ export function RegisterPage() {
               </div>
               <div className="field">
                 <label htmlFor="register-country">{t('common.country')} <span className="muted">({t('common.optional')})</span></label>
-                <input id="register-country" value={form.country} onChange={change('country')} maxLength={60} />
+                <input id="register-country" name="country" value={form.country} onChange={change('country')} maxLength={60} />
               </div>
               <div className="field">
                 <label htmlFor="register-password">{t('common.password')}</label>
                 <input
                   id="register-password"
+                  name="password"
                   type="password"
                   value={form.password}
                   onChange={change('password')}
