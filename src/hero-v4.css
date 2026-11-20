@@ -417,6 +417,21 @@
   }
 }
 
+@media (max-width: 1320px) and (min-width: 901px) {
+  .header-inner {
+    gap: 12px;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .btn-header {
+    padding: 9px 12px;
+    font-size: 0.7rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .device-float,
   .device-glow,
