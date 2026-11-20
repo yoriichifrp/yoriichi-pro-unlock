@@ -1,16 +1,16 @@
 /* =========================================================
    YORIICHI PRO UNLOCK — Sistema tipográfico (identidad visual)
-   Cinzel   → títulos: guerrero legendario, inscripcional, imponente
-   Chakra Petch → parte técnica: botones, navegación, etiquetas
+   Oswald   → marca y titulares: geométrico, condensado, firme
+   Rajdhani → voz técnica: navegación, botones, etiquetas
    Inter    → lectura: párrafos, formularios y tablas de datos
-   Solo tipografía: no altera estructura, tamaños ni contenido.
+   Solo tipografía: no altera estructura, contenido ni rutas.
    ========================================================= */
 
 /* ---------- 1. Familias ---------- */
 :root {
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Cinzel", "Times New Roman", Georgia, serif;
-  --font-tech: "Chakra Petch", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Oswald", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-tech: "Rajdhani", "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   font-feature-settings: "kern" 1, "liga" 1;
 }
 
-/* ---------- 2. Títulos: presencia de marca ---------- */
+/* ---------- 2. Titulares: autoridad condensada ---------- */
 h1,
 h2,
 h3,
@@ -30,20 +30,24 @@ h6,
 .panel-title,
 .page-title {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-synthesis: none;
+  letter-spacing: 0.004em;
 }
 
 h1,
 .hero-title,
-.page-title {
-  font-weight: 900;
+.page-title,
+.section-title {
+  font-weight: 700;
+  letter-spacing: 0.002em;
+  line-height: 1.12;
 }
 
-/* Títulos pequeños no deben perder legibilidad en mayúsculas anchas */
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.015em;
 }
 
 /* ---------- 3. Voz técnica: navegación, botones, etiquetas ---------- */
@@ -71,6 +75,7 @@ button,
 .nav-link,
 .nav-drop-item {
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .eyebrow,
@@ -80,6 +85,7 @@ th,
 label,
 legend {
   font-weight: 600;
+  letter-spacing: 0.045em;
 }
 
 /* Cifras y códigos: alineación estable en tablas y paneles */
@@ -122,7 +128,7 @@ textarea {
 /* ---------- 5. Detalles japoneses tradicionales ---------- */
 .jp,
 .serif-jp {
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Songti SC", var(--font-display), serif;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Songti SC", var(--font-display), sans-serif;
 }
 
 /* ---------- 6. Legibilidad global ---------- */
