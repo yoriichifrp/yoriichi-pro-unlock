@@ -91,35 +91,44 @@ export default function Admin() {
   const kpis = useMemo(() => {
     if (!overview) return [];
     return [
-      { label: t('admin.kpi.orders'), value: overview.orders.total },
-      { label: t('admin.kpi.open'), value: (overview.orders.byStatus.received || 0) + (overview.orders.byStatus.in_progress || 0) },
-      { label: t('admin.kpi.clients'), value: overview.users.total },
-      { label: t('admin.kpi.available'), value: overview.services.available },
-      { label: t('admin.kpi.messages'), value: overview.messages.open },
-      { label: t('admin.kpi.payments'), value: overview.payments.active },
+      { label: t('admin.kpi.orders'), value: overview.orders.total, tone: 'tone-gold' },
+      { label: t('admin.kpi.open'), value: (overview.orders.byStatus.received || 0) + (overview.orders.byStatus.in_progress || 0), tone: 'tone-blue' },
+      { label: t('admin.kpi.clients'), value: overview.users.total, tone: 'tone-cyan' },
+      { label: t('admin.kpi.available'), value: overview.services.available, tone: 'tone-gold' },
+      { label: t('admin.kpi.messages'), value: overview.messages.open, tone: 'tone-fire' },
+      { label: t('admin.kpi.payments'), value: overview.payments.active, tone: 'tone-blue' },
     ];
   }, [overview, t]);
 
   return (
     <section className="section">
       <div className="container">
-        <span className="eyebrow">{t('nav.admin')}</span>
-        <h1 className="section-title">{t('admin.title')}</h1>
-        <p className="section-sub">{t('admin.sub')}</p>
-        <div className="alert alert-warn mt-2">{t('admin.demoWarning')}</div>
+        <div className="dash-shell">
+          <aside className="dash-side">
+            <div className="dash-side-head">
+              <span className="eyebrow">{t('nav.admin')}</span>
+              <strong>{t('admin.title')}</strong>
+              <span className="small muted">{t('admin.sub')}</span>
+            </div>
+            <nav className="dash-nav" aria-label={t('nav.admin')}>
+              {TABS.map((name) => (
+                <button
+                  type="button"
+                  key={name}
+                  className={`dash-nav-item ${tab === name ? 'is-active' : ''}`}
+                  aria-current={tab === name ? 'page' : undefined}
+                  onClick={() => setTab(name)}
+                >
+                  {t(`admin.tab.${name}`)}
+                </button>
+              ))}
+            </nav>
+            <div className="dash-side-foot">
+              <div className="alert alert-warn small">{t('admin.demoWarning')}</div>
+            </div>
+          </aside>
 
-        <div className="tabs mt-3">
-          {TABS.map((name) => (
-            <button
-              type="button"
-              key={name}
-              className={`tab ${tab === name ? 'active' : ''}`}
-              onClick={() => setTab(name)}
-            >
-              {t(`admin.tab.${name}`)}
-            </button>
-          ))}
-        </div>
+          <div className="dash-main">
 
         {error ? <div className="alert alert-error mt-3">{error}</div> : null}
         {notice ? <div className="alert alert-success mt-3">{notice}</div> : null}
@@ -129,7 +138,7 @@ export default function Admin() {
           <>
             <div className="grid-3 mt-3">
               {kpis.map((item) => (
-                <div className="stat-card" key={item.label}>
+                <div className={`stat-card ${item.tone}`} key={item.label}>
                   <span>{item.label}</span>
                   <strong>{item.value}</strong>
                 </div>
@@ -743,6 +752,8 @@ export default function Admin() {
             <p className="hint mt-3">{t('admin.settings.password')}</p>
           </div>
         ) : null}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -47,7 +47,17 @@ export function LoginPage() {
   return (
     <section className="section">
       <div className="container">
-        <div className="auth-wrap">
+        <div className="auth-wrap auth-split">
+          <aside className="auth-aside">
+            <span className="eyebrow">{t('brand.tagline')}</span>
+            <h2 className="auth-aside-title">{t('home.hero.tagline')}</h2>
+            <ul className="auth-points">
+              <li>{t('home.status.catalog')}</li>
+              <li>{t('nav.tools')}</li>
+              <li>{t('nav.track')}</li>
+            </ul>
+            <p className="small muted">{t('home.hero.note')}</p>
+          </aside>
           <div className="auth-card">
             <span className="eyebrow">{t('nav.login')}</span>
             <h1 className="section-title">{t('auth.login.title')}</h1>
@@ -136,7 +146,17 @@ export function RegisterPage() {
   return (
     <section className="section">
       <div className="container">
-        <div className="auth-wrap">
+        <div className="auth-wrap auth-split">
+          <aside className="auth-aside">
+            <span className="eyebrow">{t('brand.tagline')}</span>
+            <h2 className="auth-aside-title">{t('home.hero.tagline')}</h2>
+            <ul className="auth-points">
+              <li>{t('home.status.catalog')}</li>
+              <li>{t('nav.tools')}</li>
+              <li>{t('nav.track')}</li>
+            </ul>
+            <p className="small muted">{t('home.hero.note')}</p>
+          </aside>
           <div className="auth-card">
             <span className="eyebrow">{t('nav.register')}</span>
             <h1 className="section-title">{t('auth.register.title')}</h1>

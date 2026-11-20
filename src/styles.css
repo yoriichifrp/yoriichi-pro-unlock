@@ -2498,3 +2498,72 @@ select option {
     justify-content: center;
   }
 }
+
+/* =========================================================
+   Acceso: panel lateral cinematográfico
+   ========================================================= */
+.auth-split {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.auth-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 30px;
+  border-radius: var(--radius, 18px);
+  border: 1px solid rgba(63, 224, 255, 0.2);
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(139, 0, 32, 0.34), transparent 60%),
+    radial-gradient(100% 80% at 90% 100%, rgba(59, 140, 255, 0.2), transparent 62%),
+    linear-gradient(180deg, rgba(9, 13, 24, 0.96), rgba(3, 5, 11, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 26px 60px rgba(0, 0, 0, 0.45);
+}
+
+.auth-aside-title {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  margin: 0;
+  background: linear-gradient(100deg, var(--gold, #e8c46a), #fff3cf 55%, var(--gold, #e8c46a));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.auth-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.auth-points li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.auth-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3fe0ff;
+  box-shadow: 0 0 10px rgba(63, 224, 255, 0.85);
+}
+
+@media (max-width: 900px) {
+  .auth-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auth-aside {
+    padding: 22px;
+  }
+}
