@@ -21,7 +21,7 @@ const DICT = {
     'nav.menu': 'Menú',
     'nav.allServices': 'Ver todos los servicios',
 
-    'common.loading': 'Cargando…',
+    'common.refresh': 'Actualizar',
     'common.preparing': 'En preparación',
     'common.available': 'Disponible',
     'common.paused': 'Pausado',
@@ -102,6 +102,7 @@ const DICT = {
     'home.categories.title': 'Catálogo GSM',
     'home.categories.sub': 'Ocho líneas de servicio, un mismo estándar de trazabilidad.',
     'home.categories.cta': 'Abrir catálogo completo',
+    'home.process.eyebrow': 'Proceso',
     'home.process.title': 'Cómo trabajamos',
     'home.process.sub': 'Un flujo claro, sin promesas que no podamos cumplir.',
     'home.process.1.title': 'Solicitud',
@@ -341,7 +342,7 @@ const DICT = {
     'nav.menu': 'Menu',
     'nav.allServices': 'View all services',
 
-    'common.loading': 'Loading…',
+    'common.refresh': 'Refresh',
     'common.preparing': 'In preparation',
     'common.available': 'Available',
     'common.paused': 'Paused',
@@ -422,6 +423,7 @@ const DICT = {
     'home.categories.title': 'GSM Catalog',
     'home.categories.sub': 'Eight service lines, one traceability standard.',
     'home.categories.cta': 'Open full catalog',
+    'home.process.eyebrow': 'Process',
     'home.process.title': 'How we work',
     'home.process.sub': 'A clear flow, without promises we cannot keep.',
     'home.process.1.title': 'Request',
