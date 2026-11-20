@@ -68,7 +68,6 @@ export function CategoryIcon({ name, size = 22 }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      viewBox-role="presentation"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
