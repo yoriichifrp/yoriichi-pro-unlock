@@ -6,7 +6,8 @@ import { api } from '../api';
 import { CategoryIcon } from '../components/icons';
 import { Reveal } from '../components/ui';
 import { priceLabel } from '../components/status';
-import { SamuraiArt, LockedPhone } from '../components/HeroArt';
+import { LockedPhone } from '../components/HeroArt';
+import { YoriichiArt } from '../components/YoriichiArt';
 
 const ACCENTS = {
   fire: '#ff3b2f',
@@ -78,7 +79,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-stage hero-stage-ref">
             <Reveal className="hero-art" delay={40}>
-              <SamuraiArt />
+              <YoriichiArt />
             </Reveal>
 
             <Reveal className="hero-copy hero-copy-ref" delay={90}>

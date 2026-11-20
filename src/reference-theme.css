@@ -815,3 +815,230 @@ body {
     opacity: 0.3;
   }
 }
+
+/* ---------- Hero: Yoriichi Tsugikuni como personaje principal ---------- */
+.hero-stage-ref {
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.34fr) minmax(0, 1.16fr);
+  grid-template-areas: "device copy art";
+  align-items: center;
+  column-gap: 10px;
+}
+
+.hero-copy-ref {
+  grid-area: copy;
+}
+
+.hero-device {
+  grid-area: device;
+}
+
+.hero-art {
+  grid-area: art;
+  position: relative;
+  align-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Halo carmesí detrás del personaje */
+.hero-art::before {
+  content: '';
+  position: absolute;
+  inset: -6% -10% -4%;
+  z-index: 0;
+  background: radial-gradient(closest-side, rgba(200, 16, 46, 0.4), rgba(110, 8, 24, 0.16) 58%, transparent 78%);
+  filter: blur(8px);
+  animation: yoriichiHalo 7.5s ease-in-out infinite;
+}
+
+/* Separación del fondo fotográfico para que el personaje domine */
+.hero-ref::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(520px 600px at 78% 48%, rgba(3, 5, 11, 0.74), rgba(3, 5, 11, 0.22) 62%, transparent 78%);
+}
+
+.hero-art .yoriichi-art {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  max-height: 620px;
+  filter:
+    drop-shadow(0 26px 46px rgba(0, 0, 0, 0.72))
+    drop-shadow(0 0 34px rgba(200, 16, 46, 0.28));
+  animation: yoriichiFloat 9s ease-in-out infinite;
+}
+
+/* Mantiene la entrada de Reveal y elimina la atenuación del fondo */
+.hero-ref .hero-art.reveal:not(.is-visible) {
+  opacity: 0;
+}
+
+.hero-ref .hero-art.reveal.is-visible {
+  opacity: 1;
+}
+
+/* Energía, brasas y luna */
+.yoriichi-art .yo-energy {
+  stroke-dasharray: 30 22;
+  animation: energyFlow 3.4s linear infinite;
+}
+
+.yoriichi-art .yo-energy-b {
+  animation-duration: 4.6s;
+  animation-delay: -1.4s;
+}
+
+.yoriichi-art .yo-ember {
+  animation: emberRise 5.4s linear infinite;
+}
+
+.yoriichi-art .yo-ember-2 {
+  animation-delay: -1.1s;
+  animation-duration: 6.2s;
+}
+
+.yoriichi-art .yo-ember-3 {
+  animation-delay: -2.4s;
+  animation-duration: 4.8s;
+}
+
+.yoriichi-art .yo-ember-4 {
+  animation-delay: -3.2s;
+  animation-duration: 6.8s;
+}
+
+.yoriichi-art .yo-ember-5 {
+  animation-delay: -0.6s;
+  animation-duration: 5.9s;
+}
+
+.yoriichi-art .yo-spark {
+  animation: pulseDot 3.6s ease-in-out infinite;
+}
+
+.yoriichi-art .yo-spark-2 {
+  animation-delay: -1.2s;
+}
+
+.yoriichi-art .yo-spark-3 {
+  animation-delay: -2.1s;
+}
+
+.yoriichi-art .yo-moon {
+  animation: yoriichiMoon 8s ease-in-out infinite;
+}
+
+@keyframes yoriichiHalo {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes yoriichiFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -9px, 0);
+  }
+}
+
+@keyframes emberRise {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: translateY(-52px);
+    opacity: 0;
+  }
+}
+
+@keyframes energyFlow {
+  to {
+    stroke-dashoffset: -208;
+  }
+}
+
+@keyframes yoriichiMoon {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero-stage-ref {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "art"
+      "device";
+    row-gap: 6px;
+  }
+
+  .hero-art {
+    align-self: center;
+    margin-top: 4px;
+  }
+
+  .hero-art .yoriichi-art {
+    max-width: 460px;
+    max-height: 520px;
+  }
+
+  .hero-device {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-art .yoriichi-art {
+    max-width: 320px;
+    max-height: 420px;
+  }
+
+  .hero-device {
+    max-width: 200px;
+  }
+
+  .hero-ref::after {
+    background: radial-gradient(340px 400px at 50% 58%, rgba(3, 5, 11, 0.7), transparent 76%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .yoriichi-art,
+  .hero-art::before,
+  .yoriichi-art .yo-energy,
+  .yoriichi-art .yo-ember,
+  .yoriichi-art .yo-spark,
+  .yoriichi-art .yo-moon {
+    animation: none;
+  }
+}
