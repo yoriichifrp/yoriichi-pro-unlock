@@ -6,8 +6,8 @@ import { api } from '../api';
 import { CategoryIcon } from '../components/icons';
 import { Reveal } from '../components/ui';
 import { priceLabel } from '../components/status';
-import { HoloDevice } from '../components/HoloDevice';
-import { YoriichiArt } from '../components/YoriichiArt';
+import { HeroDevice } from '../components/HeroDevice';
+import { HeroPortrait } from '../components/HeroPortrait';
 
 const ACCENTS = {
   fire: '#ff3b2f',
@@ -79,7 +79,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-stage hero-stage-ref">
             <Reveal className="hero-art" delay={40}>
-              <YoriichiArt />
+              <HeroPortrait />
             </Reveal>
 
             <Reveal className="hero-copy hero-copy-ref" delay={90}>
@@ -134,7 +134,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal className="hero-device" delay={150}>
-              <HoloDevice />
+              <HeroDevice />
             </Reveal>
           </div>
 
