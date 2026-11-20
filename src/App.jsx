@@ -52,15 +52,26 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/catalogo" element={<Catalog />} />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="/servicios/:slug" element={<CategoryPage />} />
         <Route path="/herramientas" element={<Tools />} />
         <Route path="/creditos" element={<Credits />} />
         <Route path="/estado" element={<Track />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/ingresar" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/registro" element={<RegisterPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route
           path="/panel"
+          element={(
+            <Protected>
+              <Dashboard />
+            </Protected>
+          )}
+        />
+        <Route
+          path="/dashboard"
           element={(
             <Protected>
               <Dashboard />
