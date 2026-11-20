@@ -6,7 +6,7 @@ import { api } from '../api';
 import { CategoryIcon } from '../components/icons';
 import { Reveal } from '../components/ui';
 import { priceLabel } from '../components/status';
-import { LockedPhone } from '../components/HeroArt';
+import { HoloDevice } from '../components/HoloDevice';
 import { YoriichiArt } from '../components/YoriichiArt';
 
 const ACCENTS = {
@@ -134,7 +134,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal className="hero-device" delay={150}>
-              <LockedPhone />
+              <HoloDevice />
             </Reveal>
           </div>
 

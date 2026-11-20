@@ -343,7 +343,55 @@ export function YoriichiArt({ className = '' }) {
       <path d="M330 483 C341 485 348 492 350 500 C343 502 334 496 329 489 Z" fill={`url(#${g('skin')})`} stroke="#8a5348" strokeOpacity="0.45" strokeWidth="1" />
       <path d="M337 486 C343 489 347 494 348 499" stroke="#a86b5f" strokeOpacity="0.4" strokeWidth="1" fill="none" />
 
-      {/* ---------- Energía de la katana ---------- */}
+      {/* ---------- Brazo izquierdo con manga del haori ---------- */}
+      <path
+        d="M182 402 C154 424 138 462 132 500 L172 512 C178 478 192 448 210 428 Z"
+        fill={`url(#${g('uniform')})`}
+        stroke="#e0b45c"
+        strokeOpacity="0.14"
+        strokeWidth="1"
+      />
+      <path
+        d="M170 500 C146 528 136 574 138 618 L206 618 C202 578 208 540 220 512 L196 486 Z"
+        fill={`url(#${g('haori')})`}
+        stroke="#12030a"
+        strokeOpacity="0.65"
+        strokeWidth="1.3"
+      />
+      <path d="M170 500 C150 528 141 572 142 616" stroke={`url(#${g('gold')})`} strokeOpacity="0.5" strokeWidth="1.4" fill="none" />
+      <path d="M196 492 C186 522 180 566 180 612" stroke="#08080f" strokeOpacity="0.55" strokeWidth="2" fill="none" />
+
+      {/* ---------- Katana Nichirin: hoja, hamon y filo al rojo ---------- */}
+      <path
+        d="M356 470 C378 424 400 376 422 330"
+        stroke="#ffffff"
+        strokeOpacity="0.55"
+        strokeWidth="1.1"
+        fill="none"
+        strokeDasharray="3 5"
+      />
+      <path
+        d="M352 470 C376 422 398 374 420 326"
+        stroke="#ff7a3c"
+        strokeOpacity="0.75"
+        strokeWidth="1.8"
+        fill="none"
+        filter={`url(#${g('glow')})`}
+      />
+      <path
+        className="yo-flame"
+        d="M372 442 C364 424 372 408 384 396 C380 414 390 424 388 438 C386 450 376 452 372 442 Z"
+        fill="#ff6a3c"
+        fillOpacity="0.55"
+        filter={`url(#${g('fire')})`}
+      />
+      <path
+        className="yo-flame yo-flame-2"
+        d="M398 372 C392 356 400 342 410 332 C406 348 414 356 412 368 C410 378 402 380 398 372 Z"
+        fill="#ffd27a"
+        fillOpacity="0.5"
+        filter={`url(#${g('fire')})`}
+      />
       <g filter={`url(#${g('fire')})`} opacity="0.75">
         <path
           className="yo-energy"
