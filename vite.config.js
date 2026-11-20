@@ -11,8 +11,8 @@ import { resolve } from 'node:path';
   lanzar peticiones que terminen en 404 cuando el archivo todavía no está.
 */
 const HERO_IMAGE_CANDIDATES = [
-  'yoriichi-original.png',
   'yoriichi-original.webp',
+  'yoriichi-original.png',
   'yoriichi-original.jpg',
   'yoriichi-original.jpeg',
 ];
