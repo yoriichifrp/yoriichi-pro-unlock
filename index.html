@@ -16,9 +16,65 @@
       rel="stylesheet"
     />
     <title>YORIICHI PRO UNLOCK — Servicios GSM Internacionales</title>
+    <style>
+      .nojs-fallback {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 32px 20px;
+        text-align: center;
+        background: radial-gradient(900px 520px at 50% 0%, rgba(200, 16, 46, 0.22), transparent 62%), #05070d;
+        color: #e9f1fc;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      .nojs-fallback h1 {
+        margin: 0;
+        font-family: Cinzel, Georgia, serif;
+        font-size: clamp(1.6rem, 5vw, 2.6rem);
+        letter-spacing: 0.08em;
+        color: #f4d98d;
+      }
+
+      .nojs-fallback .nojs-tagline {
+        margin: 0;
+        font-size: 1.05rem;
+        letter-spacing: 0.04em;
+        color: #5fd8ff;
+      }
+
+      .nojs-fallback p {
+        margin: 0;
+        max-width: 46ch;
+        line-height: 1.6;
+        color: #c8d3e3;
+      }
+
+      .nojs-fallback a {
+        color: #f0d18b;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div class="nojs-fallback">
+        <h1>YORIICHI PRO UNLOCK</h1>
+        <p class="nojs-tagline">Tus soluciones GSM profesionales</p>
+        <p>
+          Plataforma internacional de servicios GSM: catálogo técnico, IMEI Check, Network Unlock,
+          diagnóstico y recuperación autorizada, eSIM, renta de herramientas y seguimiento de pedidos.
+        </p>
+        <p>Activa JavaScript en tu navegador para usar la plataforma completa y el panel de clientes.</p>
+        <p>
+          WhatsApp y Telegram: <a href="https://wa.me/18299729672">+1 829 972 9672</a> ·
+          <a href="mailto:yoriichifrp09@gmail.com">yoriichifrp09@gmail.com</a>
+        </p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
