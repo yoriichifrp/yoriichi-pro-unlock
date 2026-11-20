@@ -254,7 +254,8 @@ export function YoriichiArt({ className = '' }) {
 
       {/* ---------- Pendientes hanafuda ---------- */}
       <g>
-        <path d="M176 248 L170 258" stroke="#e0b45c" strokeWidth="1.4" />
+        <path d="M176 246 L169 257" stroke="#e0b45c" strokeWidth="1.6" />
+        <circle cx="176" cy="246" r="2.2" fill="#e0b45c" />
         <rect x="158" y="256" width="20" height="36" rx="3" fill="#f6e7c6" stroke="#c9a24a" strokeWidth="1.4" />
         <circle cx="168" cy="270" r="5.4" fill="#c8102e" />
         <path d="M168 264 v12M162 270 h12" stroke="#f6e7c6" strokeWidth="0.9" strokeOpacity="0.7" />
@@ -262,7 +263,8 @@ export function YoriichiArt({ className = '' }) {
         <path d="M160 292 H176" stroke="#8a6220" strokeWidth="1.2" />
       </g>
       <g>
-        <path d="M288 248 L294 258" stroke="#e0b45c" strokeWidth="1.4" />
+        <path d="M288 246 L295 257" stroke="#e0b45c" strokeWidth="1.6" />
+        <circle cx="288" cy="246" r="2.2" fill="#e0b45c" />
         <rect x="282" y="256" width="20" height="36" rx="3" fill="#f6e7c6" stroke="#c9a24a" strokeWidth="1.4" />
         <circle cx="292" cy="270" r="5.4" fill="#c8102e" />
         <path d="M292 264 v12M286 270 h12" stroke="#f6e7c6" strokeWidth="0.9" strokeOpacity="0.7" />
@@ -323,17 +325,23 @@ export function YoriichiArt({ className = '' }) {
       <path d="M322 536 L318 546" stroke={`url(#${g('gold')})`} strokeWidth="5" strokeLinecap="round" />
 
       {/* Mano con dedos sobre la empuñadura */}
-      <ellipse cx="336" cy="508" rx="16" ry="20" transform="rotate(-22 336 508)" fill={`url(#${g('skin')})`} stroke="#a86b5f" strokeOpacity="0.45" strokeWidth="1" />
-      <g stroke={`url(#${g('skin')})`} strokeWidth="8.5" strokeLinecap="round" fill="none">
-        <path d="M328 491 L347 496" />
-        <path d="M325 501 L344 506" />
-        <path d="M322 511 L341 516" />
-        <path d="M320 521 L338 526" />
+      <path d="M306 528 C318 534 328 542 332 552 L314 562 C308 550 300 542 292 538 Z" fill={`url(#${g('uniform')})`} stroke="#e0b45c" strokeOpacity="0.16" strokeWidth="1" />
+      <ellipse cx="336" cy="508" rx="17" ry="21" transform="rotate(-22 336 508)" fill={`url(#${g('skin')})`} stroke="#8a5348" strokeOpacity="0.45" strokeWidth="1" />
+      <ellipse cx="341" cy="513" rx="13" ry="16" transform="rotate(-22 341 513)" fill="#c98a72" fillOpacity="0.22" />
+      <g stroke={`url(#${g('skin')})`} strokeWidth="9" strokeLinecap="round" fill="none">
+        <path d="M327 491 L348 496" />
+        <path d="M324 501 L345 506" />
+        <path d="M321 511 L342 516" />
+        <path d="M319 521 L339 526" />
       </g>
-      <g stroke="#a86b5f" strokeOpacity="0.5" strokeWidth="1.1" fill="none" strokeLinecap="round">
-        <path d="M328 491 L347 496M325 501 L344 506M322 511 L341 516M320 521 L338 526" />
+      <g stroke="#8a5348" strokeOpacity="0.55" strokeWidth="1.6" fill="none" strokeLinecap="round">
+        <path d="M327 491 L348 496M324 501 L345 506M321 511 L342 516M319 521 L339 526" />
       </g>
-      <path d="M331 484 C341 486 347 493 349 500 C343 502 335 496 330 490 Z" fill={`url(#${g('skin')})`} stroke="#a86b5f" strokeOpacity="0.5" strokeWidth="1" />
+      <g stroke="#a86b5f" strokeOpacity="0.35" strokeWidth="1.1" fill="none" strokeLinecap="round">
+        <path d="M329 487.5 L350 492.5M326 497.5 L347 502.5M323 507.5 L344 512.5M321 517.5 L341 522.5" />
+      </g>
+      <path d="M330 483 C341 485 348 492 350 500 C343 502 334 496 329 489 Z" fill={`url(#${g('skin')})`} stroke="#8a5348" strokeOpacity="0.45" strokeWidth="1" />
+      <path d="M337 486 C343 489 347 494 348 499" stroke="#a86b5f" strokeOpacity="0.4" strokeWidth="1" fill="none" />
 
       {/* ---------- Energía de la katana ---------- */}
       <g filter={`url(#${g('fire')})`} opacity="0.75">
