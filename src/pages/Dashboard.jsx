@@ -126,9 +126,9 @@ export default function Dashboard() {
 
         <div className="grid-4 mt-3">
           {stats.map((item) => (
-            <div className="stat" key={item.label}>
-              <span className="small muted">{item.label}</span>
-              <strong className="stat-value">{loading ? '—' : item.value}</strong>
+            <div className="stat-card" key={item.label}>
+              <span>{item.label}</span>
+              <strong>{loading ? '—' : item.value}</strong>
             </div>
           ))}
         </div>
@@ -153,7 +153,7 @@ export default function Dashboard() {
             ) : (
               <div className="stack">
                 {orders.map((order) => (
-                  <div className="panel-row" key={order.code}>
+                  <div className="order-row" key={order.code}>
                     <div className="between">
                       <div>
                         <strong>{order.serviceName}</strong>

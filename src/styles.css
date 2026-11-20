@@ -1745,3 +1745,50 @@ td select {
     scroll-behavior: auto;
   }
 }
+
+/* ---------- Panel: filas de pedido y utilidades de tabla ---------- */
+.order-row {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.input-inline {
+  max-width: 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  font: inherit;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tab {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.tab.active {
+  background: linear-gradient(120deg, rgba(255, 59, 47, 0.22), rgba(232, 196, 106, 0.16));
+  border-color: rgba(232, 196, 106, 0.5);
+}
+
+.table-wrap { overflow-x: auto; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.table-wrap th,
+.table-wrap td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); }
+.table-wrap th { color: var(--muted, rgba(255, 255, 255, 0.6)); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
